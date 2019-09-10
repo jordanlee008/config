@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " -----------------
 " VUNDLE PLUGINS
 " -----------------
+Plugin 'mhinz/vim-startify'
 
 call vundle#end()
 filetype plugin indent on
@@ -40,6 +41,14 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
 colorscheme solarized
+
+" -----------------
+" COLORS/FONTS
+" -----------------
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " ----------------
 " LANGUAGES
