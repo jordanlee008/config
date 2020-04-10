@@ -26,6 +26,13 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...except when serach query contains a capital letter
 set mouse=a	    " Allow mouse scrolling
 
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smartindent
+set showmatch
+
 set noerrorbells    " No sounds/visuals for errors
 set novisualbell
 set t_vb=
@@ -43,12 +50,14 @@ set background=dark
 colorscheme solarized
 
 " -----------------
-" COLORS/FONTS
+" KEYBINDINGS
 " -----------------
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap ,<space> :nohlsearch<CR>
+nnoremap ,w :w<CR>
 
 " ----------------
 " LANGUAGES
@@ -85,3 +94,8 @@ for tool in s:opam_packages
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
+" ## added by OPAM user-setup for vim / ocp-indent ## df4b633f77603465ebe571ccde900214 ## you can edit, but keep this line
+if count(s:opam_available_tools,"ocp-indent") == 0
+  source "/Users/jordanlee/.opam/ocaml-base-compiler.4.07.1/share/ocp-indent/vim/indent/ocaml.vim"
+endif
+" ## end of OPAM user-setup addition for vim / ocp-indent ## keep this line
