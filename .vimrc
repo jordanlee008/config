@@ -19,7 +19,13 @@ filetype plugin indent on
 " ------------------
 " BASICS
 " ------------------
-set number          " Line numbers
+set number relativenumber          " Line numbers
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
 set ruler	    " Show position
 set hlsearch        " Highlight whole word when searching
 set ignorecase      " Ignore case when searching...
